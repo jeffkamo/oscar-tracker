@@ -1,6 +1,6 @@
 <h1>Oscar's Journal</h1>
 
-<p><a href="/journal_entries/new">Create new</a></p>
+<p><%= link_to "Create new", new_journal_entry_path %></p>
 
 <table border="1" width="1000">
   <thead>
@@ -24,8 +24,8 @@
         <td><%= entry.total_calories %></td>
         <td><%= entry.date %></td>
         <td>
-          <%= link_to "Edit", "/journal_entries/#{entry.id}/edit" %>,
-          <%= link_to "Delete", "/journal_entries/#{entry.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Edit", edit_journal_entry_path(entry) %>,
+          <%= link_to "Delete", journal_entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       <tr>
     <% end %>
