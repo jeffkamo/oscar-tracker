@@ -7,8 +7,8 @@
     <tr>
       <th>Product</th>
       <th>Type</th>
-      <th>Cal</th>
       <th>Amount</th>
+      <th>Cal</th>
       <th>Total Cal</th>
       <th>Date</th>
       <th>Action</th>
@@ -19,11 +19,14 @@
       <tr align="center">
         <td><%= entry.food.product %></td>
         <td><%= entry.food.category %></td>
-        <td><%= entry.food.calories %></td>
         <td><%= entry.amount %></td>
+        <td><%= entry.food.calories %></td>
         <td><%= entry.total_calories %></td>
         <td><%= entry.date %></td>
-        <td><a href="/journal/<%= entry.id %>/edit">Edit</a></td>
+        <td>
+          <%= link_to "Edit", "/journal/#{entry.id}/edit" %>,
+          <%= link_to "Delete", "/journal_entries/#{entry.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
       <tr>
     <% end %>
   <tbody>

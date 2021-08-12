@@ -1,0 +1,24 @@
+<%= form_with model: @entry do |form| %>
+  <div>
+    <%= form.label :product %><br>
+    <%= form.select :food_id, @food %>
+  </div>
+
+  <div>
+    <%= form.label :amount %><br>
+    <%= form.number_field :amount, step: 0.5 %>
+  </div>
+
+  <div>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<% @entry.errors.each do |error| %>
+  <p><%= error.full_message %></p>
+<% end %>
