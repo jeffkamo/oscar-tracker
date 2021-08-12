@@ -1,11 +1,25 @@
 class JournalEntriesController < ApplicationController
+  def index
+    @entries = JournalEntry.all
+  end
+
+  def new
+    @entry = JournalEntry.new
+    @food = Food.all.map { |food| [food.product, food.id] }
+  end
+
+  def edit
+    @entry = JournalEntry.find(params[:id])
+    @food = Food.all.map { |food| [food.product, food.id] }
+  end
+
   def create
     @entry = JournalEntry.new(journal_entry_params)
     if @entry.save
       redirect_to :root
     else
       @food = Food.all.map { |food| [food.product, food.id] }
-      render 'journal/new'
+      render :new
     end
   end
 
@@ -15,7 +29,7 @@ class JournalEntriesController < ApplicationController
       redirect_to :root
     else
       @food = Food.all.map { |food| [food.product, food.id] }
-      render 'journal/edit'
+      render :edit
     end
   end
 
