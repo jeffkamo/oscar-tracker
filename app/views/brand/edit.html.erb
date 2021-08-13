@@ -1,0 +1,5 @@
+<h1>Edit Brand</h1>
+
+<p><%= link_to "Back", brand_index_path %></p>
+
+<%= render "form", brand: @brand, url: "/brand/#{@brand.id}" %>

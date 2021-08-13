@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'journal_entries#index'
   resources :journal_entries, only: [:new, :edit, :create, :update, :destroy]
   resources :food, only: [:index, :new, :edit, :create, :update, :destroy]
+  resources :brand, only: [:index, :new, :edit, :create, :update, :destroy]
 end
