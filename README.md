@@ -2,6 +2,12 @@
 
 An app for tracking our puppy Oscar's dietary and financial needs!
 
+This was a super quick and dirty hackathon project to see if I knew Rails basics enough to get something stupid simple up and running quickly. Also to see if I could get it deployed to Heroku easily, AND to get it working with Github Actions.
+
+Mission accomplished.
+
+I'll probably stick with my original Google Sheets version of this, as it already works and has lots of historical data I don't feel like duplicating here.
+
 - - -
 
 ## Ruby version
