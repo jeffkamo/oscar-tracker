@@ -1,0 +1,37 @@
+<%= form_with model: @food, url: url do |form| %>
+  <div>
+    <%= form.label :product %>
+    <% @food.errors.full_messages_for(:product).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <%= form.text_field :product %>
+  </div>
+
+  <div>
+    <%= form.label :brand %>
+    <% @food.errors.full_messages_for(:brand).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <%= form.select :brand_id, @brands %>
+  </div>
+
+  <div>
+    <%= form.label :category %>
+    <% @food.errors.full_messages_for(:category).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <%= form.select :category, @categories %>
+  </div>
+
+  <div>
+    <%= form.label :calories %>
+    <% @food.errors.full_messages_for(:calories).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <%= form.number_field :calories %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
