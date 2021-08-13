@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_08_12_175136) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_175136) do
 
   create_table "foods", force: :cascade do |t|
     t.string "product"
-    t.integer "brand_id"
+    t.bigint "brand_id"
     t.integer "category"
     t.decimal "calories"
     t.text "notes"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_175136) do
   create_table "journal_entries", force: :cascade do |t|
     t.date "date"
     t.decimal "amount"
-    t.integer "food_id", null: false
+    t.bigint "food_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["food_id"], name: "index_journal_entries_on_food_id"

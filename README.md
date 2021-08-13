@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app for tracking our puppy Oscar's dietary and financial needs!
 
-Things you may want to cover:
+- - -
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+I set this up with `2.7.2p137`
 
-* Configuration
+## Database creation
 
-* Database creation
+## Database initialization
 
-* Database initialization
+## Deployment instructions
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deployed to Heroku using Github actions.
